@@ -1,0 +1,39 @@
+﻿@* @{
+    ViewData["Title"] = "Home Page";
+} *@
+
+@{
+    Layout = "_LayoutLogin";
+}
+
+@* <div class="text-center"> *@
+    @* <h1 class="display-4">Welcome - @ViewBag.Message</h1> *@
+    @* <h1 class="display-4">CMS - Tela da login </h1> *@
+    @* <p>Este é um sistema de treinamento  <a target="_blank" href="http://www.torneseumprogramador.com.br">http://www.torneseumprogramador.com.br</a>.</p> *@
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+                <!-- Tabs Titles -->
+
+                <!-- Icon -->
+                <div class="fadeIn first" style="margin-top: 30px;">
+                    <img src="https://www.kindpng.com/picc/m/273-2738790_login-login-logo-hd-png-download.png" id="icon" alt="User Icon" style="width: 150px;border-radius: 12px;width: 80%;">
+                    </div>
+
+                        <!-- Login Form -->
+                        <form action="/login/logar" method="post" style="margin-top: 5px">
+                            <input type="email" required="required" id="email" class="fadeIn second" name="email" placeholder="Digite seu e-mail" style="margin-bottom: 10px;"></br>
+                            <input type="password" required="required" id="senha" class="fadeIn third" name="senha" placeholder="Digite sua senha"></br>
+                              @if(!string.IsNullOrEmpty(ViewBag.erro)){
+                                        <div class="alert alert-danger" style="margin: 10px" role="alert">
+                                            @ViewBag.erro
+                                        </div>
+                               }
+
+                            <input type="submit" class="fadeIn fourth" value="Entrar">
+                        </form>
+
+                    <!-- Remind Passowrd -->
+
+                </div>
+    </div>
+@* </div> *@
