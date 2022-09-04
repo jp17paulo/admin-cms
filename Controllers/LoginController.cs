@@ -46,6 +46,13 @@ namespace admin_cms.Controllers
                             // Expires = DateTimeOffset.UtcNow.AddSeconds(30),
                             HttpOnly = true,
                         });
+
+                          this.HttpContext.Response.Cookies.Append("nome", adms.First().Nome.ToString(), new CookieOptions
+                        {
+                            Expires = DateTimeOffset.UtcNow.AddDays(1),
+                            // Expires = DateTimeOffset.UtcNow.AddSeconds(30),
+                            HttpOnly = true,
+                        });
                         
                         //Estudar sobre passar o parametro através de Flash Messages in MVC
                         Response.Redirect("/?nome=" + adms.First().Nome.ToString());
@@ -56,6 +63,7 @@ namespace admin_cms.Controllers
                     }
 
                 }
+                
                 return View("Index");
         }
 

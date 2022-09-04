@@ -23,7 +23,17 @@ namespace admin_cms.Controllers
         [Logado]
         public IActionResult Index(string nome)
         {
-            ViewBag.nome = nome;
+            var cookieNome = Request.Cookies["nome"];
+
+            if (string.IsNullOrEmpty(nome) )
+            {
+                  ViewBag.nome = cookieNome;
+            }
+            else
+            {
+                  ViewBag.nome = nome;
+            }
+           
 
             return View();
         }
