@@ -52,6 +52,12 @@ namespace admin_cms
 
             app.UseRouting();
 
+            //   app.UseCors(x => x
+            //     .AllowAnyOrigin()
+            //     .AllowAnyMethod()
+            //     .AllowAnyHeader()
+            // );
+
             app.UseSession();
 
             app.UseAuthorization();
